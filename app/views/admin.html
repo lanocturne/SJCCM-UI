@@ -1,0 +1,96 @@
+<!-- - - - - - - - - - - - - - Page Header - - - - - - - - - - - - - - - -->
+
+<section class="page-header">
+
+  <div class="container">
+
+    <h1>管理</h1>
+
+  </div>
+  <!--/ .container-->
+
+</section><!--/ .page-header-->
+
+<!-- - - - - - - - - - - - - end Page Header - - - - - - - - - - - - - - -->
+
+<!-- - - - - - - - - - - - - - Main - - - - - - - - - - - - - - - - -->
+
+<section class="main container sbr clearfix">
+
+  <!-- - - - - - - - - - Breadcrumbs - - - - - - - - - - - - -->
+
+  <div class="breadcrumbs">
+
+    <a title="主頁" ui-sref="index">主頁</a>
+    <span>管理</span>
+    <!-- control a tab with radio btns binding -->
+    <div class="btn-group col-sm-offset-4">
+      <label class="btn btn-default" ng-model="activeTab" btn-radio="'news'">新聞</label>
+      <label class="btn btn-default" ng-model="activeTab" btn-radio="'event'">活動</label>
+      <label class="btn btn-default" ng-model="activeTab" btn-radio="'misc'">Misc</label>
+    </div>
+  </div>
+  <!--/ .breadcrumbs-->
+  <!-- - - - - - - - - end Breadcrumbs - - - - - - - - - - - -->
+
+  <div ng-show="activeTab=='news'">
+    <div class="nine columns">
+      <h3>添加新聞</h3>
+
+      <section id="admin">
+
+        <ng-form name="newsForm" ng-submit="postNews()" class="comments-form form" id="contactform">
+
+          <p class="input-block">
+            <label for="name">標題:</label>
+            <input type="text" name="title" id="name" ng-model="news.title"/>
+          </p>
+
+          <p class="input-block">
+            <label for="subtitle">副標題：</label>
+            <input type="text" name="subtitle" id="subtitle" ng-model="news.subtitle"/>
+          </p>
+
+          <p class="input-block">
+            <label for="desc">內容:</label>
+            <textarea name="desc" id="desc" cols="30" rows="10" ng-model="news.desc"></textarea>
+          </p>
+
+          <div class="flex">
+            <div class="button grey small pull-left" ng-file-select ng-model="uploadPic">上傳照片</div>
+            <figure class="add-border col-sm-2" ng-file-drop ng-model="uploadPic"
+                    drag-over-class="dragover" multiple="true"
+                    allow-dir="true" accept="image/*">
+              <div class="single-image"><img ng-src="{{uploadThumb || 'images/gravatar.png'}}"><span class="curtain">&nbsp;</span></div>
+            </figure>
+          </div>
+          <button class="col-xs-2 button default" type="submit" id="submit"
+                  ng-disabled="!news.title" ng-click="postNews()">發佈</button>
+        </ng-form>
+        <!--/ .comments-form-->
+
+      </section>
+      <!--/ #contact-->
+
+    </div>
+    <!--/ .nine .columns-->
+    <div class="col-md-4 col-lg-6">
+      <h3>預覽</h3>
+      <ul>
+        <li>
+          <h6><a href>{{news.title || '空標題'}}</a></h6>
+          <div class="bordered alignleft">
+            <figure class="add-border">
+              <a class="single-image" href><img ng-src="{{previewSrc || '/images/temp/latest-img-1.jpg'}}" alt=""><span class="curtain">&nbsp;</span></a>
+            </figure>
+          </div>
+          <p class="font-bold">{{news.subtitle || '副標題'}}</p>
+          <p>{{news.desc || '空內容'}}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <event-config ng-show="activeTab=='event'"></event-config>
+</section>
+
+

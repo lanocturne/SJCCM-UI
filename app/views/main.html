@@ -1,0 +1,394 @@
+<!-- - - - - - - - - - - - - Slider - - - - - - - - - - - - - - - -->
+
+<div class="fullwidthbanner-container">
+  <div class="fullwidthbanner">
+    <slick dots="true" class="slider lazy"
+           speed="500" autoplay="true">
+      <div ng-repeat="h in headlines">
+        <div class="image"><img data-lazy="{{h.image}}"/></div>
+      </div>
+    </slick>
+  </div>
+  <!--/ .fullwidthbanner-->
+
+</div><!--/ .fullwidthbanner-container-->
+
+<!-- - - - - - - - - - - - - end Slider - - - - - - - - - - - - - - -->
+
+
+<!-- - - - - - - - - - - - - - Main - - - - - - - - - - - - - - - - -->
+
+<section class="container" id="main-container">
+  <!-- - - - - - - - - - - - - Holder - - - - - - - - - - - - - - -->
+
+  <section class="holder clearfix">
+
+    <div class="col-sm-4">
+
+      <div class="detailimg">
+
+        <div class="bordered">
+          <figure class="add-border">
+            <a class="single-image picture-icon" rel="holder" ui-sref="about"><img
+              src="https://lh6.googleusercontent.com/-6seK29QVu-s/UyaOEhyt_FI/AAAAAAAAAVg/PDRBfQyZr68/s640/MX1_0186.jpg"/></a>
+          </figure>
+        </div>
+        <!--/ .bordered-->
+
+        <h5>我們的使命</h5>
+
+        <p>
+          我們被召叫成為一個充滿活力與熱情的天主教團體。在信德和愛德的陶成中，為聖荷西教區及普天下的華人傳 揚耶穌基督的福音。
+        </p>
+
+        <a ui-sref="about" class="button default">了解更多</a>
+
+      </div>
+      <!--/ .detailimg-->
+
+    </div>
+    <!--/ .one-third-->
+
+    <div class="col-sm-4">
+
+      <div class="detailimg">
+
+        <div class="bordered">
+          <figure class="add-border">
+            <a class="single-image picture-icon" rel="holder" ui-sref="ceremony">
+              <img
+                src="https://lh5.googleusercontent.com/-R7S9_94kQQ8/VKDk9cjntxI/AAAAAAAAErQ/mEx7FeyQqIo/s720/K3_A1400.jpg"/></a>
+          </figure>
+        </div>
+        <!--/ .bordered-->
+
+        <h5>禮儀侍奉</h5>
+
+        <p>
+          成人慕道, 嬰兒領洗, 葬禮/婚禮, 禮儀組(國語), 禮儀組(English), 聖城通訊 ... ...
+        </p>
+
+        <a href="#" class="button default">了解更多</a>
+
+      </div>
+      <!--/ .detailimg-->
+
+    </div>
+    <!--/ .one-third-->
+
+    <div class="col-sm-4">
+
+      <div class="detailimg">
+
+        <div class="bordered">
+          <figure class="add-border">
+            <a class="single-image picture-icon" rel="holder" ui-sref="ministry">
+              <img
+                src="https://lh6.googleusercontent.com/-f3ymx2bfGV8/VMbOOMMv4DI/AAAAAAAAAK8/7jHAXVKpS2I/s640/10686660_784646618297320_8429870551374936360_n.jpg"
+                alt=""/></a>
+          </figure>
+        </div>
+        <!--/ .bordered-->
+
+        <h5>事工</h5>
+
+        <p>
+          工作互助網, 生活講座, 資訊, 社會公義。
+        </p>
+
+        <a ui-sref="ministry" class="button default">了解更多</a>
+
+      </div>
+      <!--/ .detailimg-->
+
+    </div>
+    <!--/ .one-third-->
+
+    <div class="clear"></div>
+
+  </section>
+  <!--/ .holder-->
+
+  <!-- - - - - - - - - - - - end Holder - - - - - - - - - - - - - -->
+
+  <!-- - - - - - - - - - - - - - - Bottom Sidebar - - - - - - - - - - - - - - - - -->
+
+  <aside id="bottom-sidebar" class="clearfix">
+
+    <div class="col-sm-4">
+
+      <div class="widget widget_recent_entries">
+
+        <h3 class="widget-title">新聞</h3>
+
+        <ul>
+          <li ng-repeat="n in news">
+            <h6><a ui-sref="news({id:n._id})">{{n._source.title}}</a></h6>
+
+            <div class="bordered alignleft">
+
+              <figure class="add-border">
+                <a class="single-image" ui-sref="news({id:n._id})">
+                  <img ng-src="{{ n._source.image || '../images/temp/latest-img-1.jpg'}}"/></a>
+              </figure>
+
+            </div>
+            <!--/ .bordered-->
+
+            <p>
+              {{n._source.desc}}
+            </p>
+          </li>
+        </ul>
+
+      </div>
+      <!--/ .widget-->
+
+    </div>
+    <!--/ .one-third-->
+
+    <div class="col-sm-4">
+
+      <div class="widget widget_upcoming_events">
+
+        <h3 class="widget-title">未來活動</h3>
+
+        <ul>
+          <li ng-repeat="e in events">
+            <div class="entry-meta">
+              <span class="date">{{e._source.date | amDateFormat:'DD'}}</span>
+              <span class="month">{{e._source.date | amDateFormat:'MMM'}}</span>
+            </div>
+            <!--/ .entry-meta-->
+
+            <h6><a ui-sref="event({id:e._id})">{{e._source.title}}</a></h6>
+            <span class="place">{{e._source.location}}</span>
+            <span class="time">{{e._source.date | amDateFormat:'hh:mm A'}}</span>
+          </li>
+        </ul>
+
+      </div>
+      <!--/ .widget-->
+
+    </div>
+    <!--/ .one-third-->
+
+    <div class="col-sm-4">
+
+      <div class="widget widget_audio">
+
+        <h3 class="widget-title">彌撒證道收聽</h3>
+
+        <audio controls="control" src="http://static.m4christ.net/products/M154CD/s-01-20130314-01.mp3"
+               type="audio/mp3"></audio>
+
+        <span class="question">舊的已成過去，看，都成了新的。</span>
+
+      </div>
+      <!--/ .widget-->
+
+      <div class="widget-divider"></div>
+
+      <div class="widget widget_video">
+
+        <h3 class="widget-title">Featured Video</h3>
+
+        <video width="300" height="160" style="width: 100%; height: 100%;" id="player1"
+               poster="media/echo-hereweare.jpg" controls="controls" preload="none">
+          <!-- MP4 source must come first for iOS -->
+          <source type="video/mp4" src="media/echo-hereweare.mp4"/>
+          <!-- WebM for Firefox 4 and Opera -->
+          <source type="video/webm" src="media/echo-hereweare.webm"/>
+          <!-- OGG for Firefox 3 -->
+          <source type="video/ogg" src="media/echo-hereweare.ogv"/>
+          <!-- Fallback flash player for no-HTML5 browsers with JavaScript turned off -->
+          <object width="300" height="160" type="application/x-shockwave-flash" data="js/flashmediaelement.swf">
+            <param name="movie" value="js/flashmediaelement.swf"/>
+            <param name="flashvars"
+                   value="controls=true&poster=media/echo-hereweare.jpg&file=media/echo-hereweare.mp4"/>
+            <!-- Image fall back for non-HTML5 browser with JavaScript turned off and no Flash player installed -->
+            <img src="media/echo-hereweare.jpg" width="300" height="160" alt="Here we are"
+                 title="No video playback capabilities"/>
+          </object>
+        </video>
+
+      </div>
+      <!--/ .widget-->
+
+    </div>
+    <!--/ .one-third-->
+
+  </aside>
+  <!--/ #bottom-sidebar-->
+
+  <!-- - - - - - - - - - - - - end Bottom Sidebar - - - - - - - - - - - - - - - -->
+
+</section><!--/ .main -->
+
+<!-- - - - - - - - - - - - - end Main - - - - - - - - - - - - - - - - -->
+
+
+<!-- - - - - - - - - - - - - - - Footer - - - - - - - - - - - - - - - - -->
+
+<footer id="footer">
+
+  <div class="container clearfix">
+
+    <div class="four columns">
+
+      <div class="widget widget_text">
+
+        <h3 class="widget-title">About Our Church</h3>
+
+        <div class="textwidget">
+
+          <p>
+            Mollis malesuada primis in faucibus luctus ultrces posuere cubilia nis velit porttitor euismod
+            pharetra interetiam laoreet gitis placerat magna sit amet massa posuere pretium.
+          </p>
+
+        </div>
+        <!--/ .textwidget-->
+
+      </div>
+      <!--/ .widget-->
+
+      <div class="widget widget_contacts">
+
+        <div class="vcard">
+          <span class="contact street-address">Address: 12 Street, Los Angeles, CA, 94101</span>
+          <span class="contact tel">Phone:  +1 800 123 4567</span>
+          <span class="contact email">E-mail: testmail@sitename.com</span>
+        </div>
+        <!--/ .vcard-->
+
+      </div>
+      <!--/ .widget-->
+
+      <div class="widget widget_social">
+
+        <ul class="social-icons clearfix">
+          <li class="twitter"><a href="#">Twitter<span></span></a></li>
+          <li class="facebook"><a href="#">Facebook<span></span></a></li>
+          <li class="dribble"><a href="#">Dribble<span></span></a></li>
+          <li class="vimeo"><a href="#">Vimeo<span></span></a></li>
+          <li class="rss"><a href="#">Rss<span></span></a></li>
+        </ul>
+        <!--/ .social-icons-->
+
+      </div>
+      <!--/ .widget-->
+
+    </div>
+    <!--/ .four-->
+
+    <div class="four columns">
+
+      <div class="widget widget_recent_entries">
+
+        <h3 class="widget-title">Recent Posts</h3>
+
+        <ul>
+          <li>
+            <div class="bordered alignleft">
+              <figure class="add-border">
+                <a class="single-image" href="#"><img src="../images/asset/news/IMG_1999.jpg" alt=""/></a>
+              </figure>
+            </div>
+            <!--/ .bordered-->
+            <h6><a href="#">Conseq uuntur magn</a></h6>
+
+            <div class="entry-meta">Sep, 15, <a href="#">2 Comments</a></div>
+          </li>
+          <li>
+            <div class="bordered alignleft">
+              <figure class="add-border">
+                <a class="single-image" href="#"><img src="../images/temp/recent-img-5.jpg" alt=""/></a>
+              </figure>
+            </div>
+            <!--/ .bordered-->
+            <h6><a href="#">Gravida eget metus</a></h6>
+
+            <div class="entry-meta">Sep, 15, <a href="#">2 Comments</a></div>
+          </li>
+          <li>
+            <div class="bordered alignleft">
+              <figure class="add-border">
+                <a class="single-image" href="#"><img src="../images/slides/images/temp/recent-img-6.jpg" alt=""/></a>
+              </figure>
+            </div>
+            <!--/ .bordered-->
+            <h6><a href="#">Nulla vitae elit libero</a></h6>
+
+            <div class="entry-meta">Sep, 15, <a href="#">2 Comments</a></div>
+          </li>
+        </ul>
+
+      </div>
+      <!--/ .widget-->
+
+    </div>
+    <!--/ .four-->
+
+    <div class="four columns">
+
+      <div class="widget widget_nav_menu">
+
+        <h3 class="widget-title">Theme Features</h3>
+
+        <ul>
+          <li><a href="#">Responsive Design</a></li>
+          <li><a href="#">HTML5 &AMP; CSS3</a></li>
+          <li><a href="#">Google Fonts</a></li>
+          <li><a href="#">Unique &AMP; Clean Design</a></li>
+          <li><a href="#">Amazing Customer Support</a></li>
+          <li><a href="#">Flexible Layouts</a></li>
+          <li><a href="#">10 Color Variations</a></li>
+        </ul>
+
+      </div>
+      <!--/ .widget-->
+
+    </div>
+    <!--/ .four-->
+
+    <div class="four columns">
+
+      <div class="widget widget_contact_form">
+
+        <h3 class="widget-title">Contact Widget</h3>
+
+        <form method="post">
+
+          <p class="input-block">
+            <label>Name:</label>
+            <input type="text"/>
+          </p>
+
+          <p class="input-block">
+            <label>E-mail:</label>
+            <input type="text"/>
+          </p>
+
+          <p class="input-block">
+            <label>Message:</label>
+            <textarea></textarea>
+          </p>
+
+          <md-button class="md-raised" type="submit">確認</md-button>
+
+        </form>
+
+      </div>
+      <!--/ .widget-->
+
+    </div>
+    <!--/ .four-->
+
+  </div>
+  <!--/ .container-->
+
+</footer><!--/ #footer-->
+
+
+<!-- - - - - - - - - - - - - - end Footer - - - - - - - - - - - - - - - -->
