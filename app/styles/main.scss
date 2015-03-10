@@ -1,0 +1,36 @@
+$icon-font-path: "../../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+
+@import 'import.scss';
+
+.flex{
+  display: flex;
+}
+
+.navigation{
+  margin: 0;
+}
+
+.textwidget{
+  position: relative;
+  overflow: hidden;
+  max-height: 120px;
+
+  .read-more{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    margin: 0; padding: 30px 0;
+
+    background-image: linear-gradient(to bottom, transparent, rgba(237, 233, 216,.9));
+  }
+}
+
+main-footer{
+  #footer{
+    padding: 15px 0 15px;
+  }
+}
