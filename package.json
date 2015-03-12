@@ -31,8 +31,10 @@
     "grunt-usemin": "^2.1.1",
     "grunt-wiredep": "^1.7.0",
     "imagemin-gifsicle": "^4.1.0",
+    "is-path-global": "^1.0.1",
     "jshint-stylish": "^0.2.0",
     "load-grunt-tasks": "^0.4.0",
+    "os-filter-obj": "^1.0.3",
     "time-grunt": "^0.3.1"
   },
   "engines": {

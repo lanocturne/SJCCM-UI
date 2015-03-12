@@ -5663,3 +5663,6 @@ button.close {
 
 main-footer #footer {
   padding: 15px 0 15px; }
+
+.slick-track img {
+  width: 100%; }
