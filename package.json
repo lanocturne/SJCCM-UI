@@ -8,6 +8,7 @@
   "devDependencies": {
     "bin-version-check": "^2.1.0",
     "download": "^4.0.0",
+    "download-status": "^2.1.1",
     "globby": "^1.1.0",
     "grunt": "^0.4.1",
     "grunt-autoprefixer": "^0.7.3",

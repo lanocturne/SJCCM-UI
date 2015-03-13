@@ -5635,6 +5635,10 @@ button.close {
 .slick-dots {
   bottom: 10px; }
 
+pops .add-border img {
+  max-width: 50px;
+  max-height: 50px; }
+
 .fullwidthbanner-container .image img {
   width: 100%; }
 
