@@ -1,9 +1,9 @@
 @import url(css/style.css);
 @import url(css/skeleton.css);
-@import url(css/mediaelementplayer.css);
 @import url(../bower_components/angular-bootstrap-datetimepicker/src/css/datetimepicker.css);
 @import url(../bower_components/angular-google-places-autocomplete/src/autocomplete.css);
 @import url(../bower_components/angular-material/angular-material.css);
+@import url(../bower_components/mediaelement/build/mediaelementplayer.css);
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;

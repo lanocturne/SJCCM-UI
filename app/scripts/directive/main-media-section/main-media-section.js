@@ -14,6 +14,7 @@ angular.module('sjccm.directive.main.mediaSection', [
     return {
       restrict: 'E',
       templateUrl: 'scripts/directive/main-media-section/main-media-section.html',
+      scope:{},
       controller: function ($scope) {
         $scope.config = {
           autoHide: false,
@@ -24,9 +25,22 @@ angular.module('sjccm.directive.main.mediaSection', [
           preload: "auto",
           transclude: true,
           theme: {
-            url: "../bower_components/videogular-themes-default/videogular.min.css"
+            url: "../bower_components/videogular-themes-default/videogular.css"
           }
         };
+      },
+
+      link:function(scope,ele){
+        var $player = ele.find('audio');
+
+        if($player.length) {
+          $player.mediaelementplayer({
+            audioWidth  : '100%',
+            audioHeight : '34px',
+            videoWidth  : '100%',
+            videoHeight : '100%'
+          });
+        }
       }
     }
   });
