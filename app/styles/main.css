@@ -5666,7 +5666,7 @@ pops .add-border img {
     background-image: linear-gradient(to bottom, transparent, rgba(237, 233, 216, 0.9)); }
 
 main-footer #footer {
-  padding: 15px 0 15px; }
+  padding: 15px 0 0 0; }
 
 .slick-track img {
   width: 100%; }

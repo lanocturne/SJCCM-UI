@@ -1,0 +1,23 @@
+<div class="widget widget_recent_entries">
+
+  <h3 class="widget-title">資訊</h3>
+
+  <ul>
+    <li ng-repeat="p in pops" layout="row">
+      <div class="bordered alignleft">
+        <figure class="add-border">
+          <a class="single-image" ui-sref="main"><img ng-src="{{p.img}}"/></a>
+        </figure>
+      </div>
+      <!--/ .bordered-->
+      <div flex-order="2">
+        <h6><a ui-sref="main">{{p.title}}</a></h6>
+
+        <div class="entry-meta">{{p.createdAt}} <a ui-sref="main">{{p.comments}} 評論</a></div>
+      </div>
+
+    </li>
+  </ul>
+
+</div>
+<!--/ .widget-->

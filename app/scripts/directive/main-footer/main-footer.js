@@ -3,7 +3,7 @@
  */
 'use strict';
 
-angular.module('sjccm.directive.main.footer', ['ngMessages','sjccm.directive.pops'])
+angular.module('sjccm.directive.main.footer', ['ngMessages','sjccm.directive.pops','sjccm.directive.groupFellowship'])
   .directive('mainFooter', function () {
     return {
       restrict: 'E',
