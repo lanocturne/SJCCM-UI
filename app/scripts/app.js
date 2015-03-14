@@ -19,6 +19,7 @@ angular
     'sjccm.constants',
     'sjccm.admin',
     'sjccm.index',
+    'sjccm.event',
     'mgcrea.ngStrap',
     'ui.bootstrap',
     'angularMoment',
