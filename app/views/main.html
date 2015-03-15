@@ -147,30 +147,7 @@
     </div>
     <!--/ .one-third-->
 
-    <div class="col-sm-4">
-
-      <div class="widget widget_upcoming_events">
-
-        <h3 class="widget-title">未來活動</h3>
-
-        <ul>
-          <li ng-repeat="e in events">
-            <div class="entry-meta">
-              <span class="date">{{e._source.date | amDateFormat:'DD'}}</span>
-              <span class="month">{{e._source.date | amDateFormat:'MMM'}}</span>
-            </div>
-            <!--/ .entry-meta-->
-
-            <h6><a ui-sref="event({id:e._id})">{{e._source.title}}</a></h6>
-            <span class="place">{{e._source.location}}</span>
-            <span class="time">{{e._source.date | amDateFormat:'hh:mm A'}}</span>
-          </li>
-        </ul>
-
-      </div>
-      <!--/ .widget-->
-
-    </div>
+    <recent-events class="col-sm-4" events="events"></recent-events>
     <!--/ .one-third-->
 
     <main-media-section class="col-sm-4"></main-media-section>

@@ -25,6 +25,11 @@ angular.module('sjccm.event',['sjccm.event.list','sjccm.event.detail'])
             templateUrl:'views/event/event.detail.html',
             controller: 'EventCtrl'
           }
+        },
+        resolve:{
+          event:function(EventService,$stateParams){
+            return EventService.get($stateParams.id);
+          }
         }
       });
   });
