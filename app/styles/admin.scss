@@ -1,5 +1,8 @@
 #admin{
-  .breadcrumbs{
-//    margin-bottom: 0;
+  .comments-form{
+    textarea{
+      min-height: 0;
+      height: auto;
+    }
   }
 }

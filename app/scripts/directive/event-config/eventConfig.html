@@ -1,0 +1,78 @@
+<div class="col-md-6">
+
+  <h3>添加活動</h3>
+
+  <section class="admin-add">
+    <ng-form name="addForm" ng-submit="postEvent()" class="form comments-form">
+
+      <p class="input-block">
+        <label for="name">標題:</label>
+        <input type="text" name="title" id="name" ng-model="event.title"/>
+      </p>
+
+      <p class="input-block">
+        <span>時間：</span>
+
+      <div class="dropdown" dropdown>
+        <a class="dropdown-toggle my-toggle-select" dropdown-toggle>
+          <div class="input-group col-sm-6">
+            <input type="text" class="form-control" data-ng-model="humanizedDate">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+          </div>
+        </a>
+        <ul class="dropdown-menu">
+          <datetimepicker data-ng-model="event.date" data-on-set-time="onTimeSet(newDate, oldDate)"
+                          data-datetimepicker-config="{ dropdownSelector: '.my-toggle-select' }"></datetimepicker>
+        </ul>
+      </div>
+      </p>
+
+      <div class="form-group">
+        <label class="control-label">位置：</label>
+        <input class="form-control" type="text" name="location" g-places-autocomplete ng-model="event.location"/>
+      </div>
+
+      <p class="input-block">
+        <label for="desc">內容:</label>
+        <textarea name="desc" id="desc" cols="30" rows="3" ng-model="event.desc"></textarea>
+      </p>
+      <md-input-container flex>
+        <label>嵌入:</label>
+        <textarea ng-model="event.embed" columns="1"></textarea>
+      </md-input-container>
+
+      <div class="flex">
+        <div class="button grey small pull-left" ng-file-select ng-model="uploadPic">上傳照片</div>
+        <figure class="add-border col-sm-2" ng-file-drop ng-model="uploadPic"
+                drag-over-class="dragover" multiple="true"
+                allow-dir="true" accept="image/*">
+          <div class="single-image"><img ng-src="{{uploadThumb || 'images/gravatar.png'}}"><span
+            class="curtain">&nbsp;</span></div>
+        </figure>
+      </div>
+      <button class="col-xs-2 button default" type="submit" id="submit"
+              ng-disabled="!event.title" ng-click="postEvent()">發佈
+      </button>
+    </ng-form>
+    <!--/ .comments-form-->
+
+  </section>
+  <!--/ #contact-->
+</div>
+<!--/ .nine .columns-->
+<div class="col-md-4 col-lg-6">
+  <h3>預覽</h3>
+  <ul>
+    <li>
+      <h6><a href>{{event.title || '空標題'}}</a></h6>
+      <div class="bordered alignleft">
+        <figure class="add-border">
+          <a class="single-image" href><img ng-src="{{previewSrc || '/images/temp/latest-img-1.jpg'}}" alt=""><span
+            class="curtain">&nbsp;</span></a>
+        </figure>
+      </div>
+      <div ng-bind-html="event.desc"></div>
+      <span ng-if="!event.desc">空內容</span>
+    </li>
+  </ul>
+</div>

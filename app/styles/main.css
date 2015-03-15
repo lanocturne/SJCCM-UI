@@ -5645,6 +5645,10 @@ pops .add-border img {
 #main-container .holder {
   margin-top: -45px; }
 
+#admin .comments-form textarea {
+  min-height: 0;
+  height: auto; }
+
 .flex {
   display: flex; }
 
