@@ -34,7 +34,8 @@
 
       <p class="input-block">
         <label>內容:</label>
-        <div text-angular ng-model="event.desc"
+        <div text-angular ng-model="event.desc" required
+             name="desc"
              ta-toolbar="[['h1','h2','h3'],['bold','italics']]"></div>
       </p>
       <md-input-container flex>
@@ -69,11 +70,13 @@
 
       <div class="bordered alignleft">
         <figure class="add-border">
-          <a class="single-image" href><img ng-src="{{previewSrc || '/images/temp/latest-img-1.jpg'}}" alt=""><span
+          <a class="single-image" href>
+            <img ng-src="{{previewSrc || '/images/temp/latest-img-1.jpg'}}" alt=""><span
             class="curtain">&nbsp;</span></a>
         </figure>
       </div>
-      <div ng-bind-html="event.desc"></div>
+      <div>{{descPreview | truncate:75 : '...'}}</div>
+      <!--<div ng-bind-html="event.desc | truncate:200 : '...'"></div>-->
       <span ng-if="!event.desc">空內容</span>
     </li>
   </ul>

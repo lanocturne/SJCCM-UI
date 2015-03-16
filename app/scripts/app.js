@@ -23,6 +23,7 @@ angular
     'mgcrea.ngStrap',
     'ui.bootstrap',
     'angularMoment',
+    'angular.filter',
     'ngMaterial'
   ])
   .config(function ($stateProvider, $urlRouterProvider) {
