@@ -26,6 +26,9 @@ angular
     'angular.filter',
     'ngMaterial'
   ])
+  .run(function(amMoment){
+    amMoment.changeLocale('zh-tw');
+  })
   .config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
 

@@ -13,10 +13,13 @@ angular.module('sjccm.event.detail',[
   .controller('EventCtrl', function (
     $scope,
     $stateParams,
+    $q,
+    $state,
     API,
     EventService,
     MainState,
-    EventStates, event
+    EventStates,
+    event
   ) {
     $scope.states=[{
       name: '主頁',
@@ -33,4 +36,21 @@ angular.module('sjccm.event.detail',[
       _.remove(res.data,{_id:$stateParams.id});
       $scope.events = res.data;
     });
+
+    $scope.search={
+      selectedItem:null,
+      searchText:null,
+      querySearch:function(query){
+        var defer=$q.defer();
+        EventService.instantSearch({search:query})
+          .then(function(res){
+            defer.resolve(res.data);
+          });
+        return defer.promise;
+      },
+
+      go:function(){
+        $state.go('.',{id:this.selectedItem._id});
+      }
+    }
   });
