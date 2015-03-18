@@ -9,7 +9,8 @@
  */
 angular.module('sjccm.event.detail',[
   'sjccm.directive.pageHeader',
-'sjccm.directive.breadCrumbs'])
+'sjccm.directive.breadCrumbs',
+'sjccm.directive.respond'])
   .controller('EventCtrl', function (
     $scope,
     $stateParams,
