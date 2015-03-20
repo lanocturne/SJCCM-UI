@@ -1,0 +1,102 @@
+
+
+	<!-- - - - - - - - - - - - - - Page Header - - - - - - - - - - - - - - - -->
+
+	<page-header context="活動"></page-header>
+
+	<!-- - - - - - - - - - - - - end Page Header - - - - - - - - - - - - - - -->
+
+	<!-- - - - - - - - - - - - - - Main - - - - - - - - - - - - - - - - -->
+
+	<section class="main container sbr clearfix">
+
+		<!-- - - - - - - - - - Breadcrumbs - - - - - - - - - - - - -->
+
+    <bread-crumbs states="states"></bread-crumbs><!--/ .breadcrumbs-->
+
+		<!-- - - - - - - - - end Breadcrumbs - - - - - - - - - - - -->
+
+		<!-- - - - - - - - - - - - - - Content - - - - - - - - - - - - - - - - -->
+
+		<section id="content" class="ten columns">
+
+			<article class="entry event">
+
+				<div class="bordered" ng-if="event.img">
+					<figure class="add-border">
+						<img src="../../images/blog/blog-img-1.jpg" alt="" />
+					</figure>
+				</div><!--/ .bordered-->
+
+				<div class="entry-meta">
+
+					<span class="date">{{event.date | amDateFormat:'DD'}}</span>
+					<span class="month">{{event.date | amDateFormat:'MMM'}}</span>
+
+				</div><!--/ .entry-meta-->
+
+				<div class="entry-body">
+
+					<div class="entry-title">
+
+						<h2 class="title">{{event.title}}</h2>
+
+						<span class="e-date"><b>{{event.date | amDateFormat:'MMMM Do, YYYY'}}</b>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+							<strong>{{event.date | amDateFormat:'h:mm a'}}</strong>
+						</span>
+						<span class="place"><b>地點: </b>{{event.location}}</span>
+
+					</div><!--/ .entry-title-->
+
+				</div><!--/ .entry-body -->
+
+				<div class="nine columns offset-by-one alpha omega">
+
+					<div ng-bind-html="event.desc"></div>
+
+				</div><!--/ .nine-columns-->
+
+			</article><!--/ .entry-->
+
+			<div class="border-divider"></div>
+
+			<respond></respond>
+
+		</section><!--/ #content-->
+
+		<!-- - - - - - - - - - - - - end Content - - - - - - - - - - - - - - - -->
+
+		<!-- - - - - - - - - - - - - Sidebar - - - - - - - - - - - - - - - - - -->
+
+		<aside id="sidebar" class="one-third column">
+
+			<div class="widget widget_search">
+          <md-autocomplete
+            md-selected-item="search.selectedItem"
+            md-search-text="search.searchText"
+            md-items="item in search.querySearch(search.searchText)"
+            md-item-text="item._source.title"
+            md-selected-item-change="search.go()"
+            placeholder="搜一下活動">
+            <span md-highlight-text="search.searchText">{{item._source.title}}</span>
+          </md-autocomplete><!--/ #searchform-->
+			</div><!--/ .widget-->
+
+      <recent-events class="entry" events="events"></recent-events>
+
+      <group-fellowship></group-fellowship><!--/ .widget-->
+
+			<div class="widget widget_latest_tweets">
+
+				<h3 class="widget-title">常用資料</h3>
+
+				<div id="tweet"></div>
+
+			</div><!--/ .widget-->
+
+		</aside><!--/ #sidebar-->
+
+		<!-- - - - - - - - - - - - - end Sidebar - - - - - - - - - - - - - - - -->
+
+
+	</section><!--/ .main -->
