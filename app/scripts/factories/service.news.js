@@ -6,19 +6,17 @@
  */
 'use strict';
 
-angular.module('sjccm.service.news',[])
-  .factory('NewsService',function($http,API){
-    var service={
+angular.module('sjccm.service.news', [])
+  .factory('NewsService', function ($http, API) {
+    var service = {},
+      newsEp = API + 'news';
 
-      },
-      newsEp=API+'news';
-
-    service.post=function(news){
-      return $http.post(newsEp,news);
+    service.post = function (news) {
+      return $http.post(newsEp, news);
     };
 
-    service.get=function(id){
-      return $http.get(id ? newsEp+'/'+id : newsEp);
+    service.get = function (id) {
+      return $http.get(id ? newsEp + '/' + id : newsEp);
     };
 
     return service;
