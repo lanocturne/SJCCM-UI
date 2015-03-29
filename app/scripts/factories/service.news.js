@@ -7,7 +7,9 @@
 'use strict';
 
 angular.module('sjccm.service.news', [])
-  .factory('NewsService', function ($http, API) {
+  .factory('NewsService',
+  function ($http,
+            API) {
     var service = {},
       newsEp = API + 'news';
 
